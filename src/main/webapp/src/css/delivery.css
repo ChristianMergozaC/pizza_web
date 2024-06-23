@@ -1,3 +1,4 @@
+/* Estilos generales del cuerpo y la página */
 body {
   margin: 0;
   padding: 0;
@@ -7,7 +8,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #f8f9fa;
-  overflow: hidden;
+  overflow-y: scroll; /* Habilita el desplazamiento vertical */
   position: relative;
 }
 
@@ -22,24 +23,15 @@ body {
   --alter-fam-style: 400;
 }
 
-/* * {
-  font-family: "Alfa Slab One", serif;
-  font-weight: 400;
-  font-style: normal;
-
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
-  font-variation-settings: "slnt" 0;
-} */
-
+/* Estilos para encabezados y navegación */
 h1 {
   font-family: var(--main-fam-font);
   font-weight: var(--main-fam-weight);
   font-style: var(--main-fam-style);
   color: var(--color-text1);
+  margin: 0;
 }
+
 .logo {
   height: 100px;
   margin-left: 50px;
@@ -48,7 +40,7 @@ h1 {
 nav {
   display: flex;
   background-color: var(--color-bg);
-  background-image: url(../../assets/images/BG_pared.png);
+  background-image: url("../../assets/images/BG_pared.png");
   flex-direction: row;
   flex-wrap: wrap;
 }
@@ -69,19 +61,18 @@ nav {
 .labels-menu {
   color: white;
   text-decoration: none;
-
   padding: 2.5rem 0.5rem 0 0;
   font-family: var(--alter-fam-font);
   font-weight: 600;
 }
 
+/* Fondo con imagen de fondo desenfocada */
 body::before {
   content: "";
-  background: url("https://img.freepik.com/fotos-premium/pizza-pepperoni-tira-queso-delante-horno-lena-fuego-segundo-plano_266402-1136.jpg?w=1380")
-    no-repeat center center fixed;
+  background: url("https://img.freepik.com/fotos-premium/pizza-pepperoni-tira-queso-delante-horno-lena-fuego-segundo-plano_266402-1136.jpg?w=1380") no-repeat center center fixed;
   background-size: cover;
   filter: blur(10px);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -89,6 +80,7 @@ body::before {
   z-index: -1;
 }
 
+/* Contenedor principal */
 .container {
   position: relative;
   width: 90%;
@@ -99,46 +91,45 @@ body::before {
   border-radius: 8px;
   color: #333;
   z-index: 1;
+  min-height: 100vh; /* Asegura que el contenedor ocupe al menos toda la altura de la ventana */
+  overflow: hidden; /* Oculta el desbordamiento del contenido */
 }
 
+/* Encabezado */
 header {
   padding: 20px;
   border-radius: 8px 8px 0 0;
   color: white;
   text-align: center;
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); /* Semitransparent background for better readability */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejor legibilidad */
 }
 
-h1 {
-  margin: 0;
-}
-
+/* Contenido principal */
 main {
   padding: 20px;
 }
 
+/* Títulos */
 h2 {
   text-align: center;
   color: #333;
 }
 
+/* Grupo de formulario */
 .form-group {
   margin-bottom: 15px;
   display: flex;
   flex-direction: column;
 }
 
+/* Etiquetas del formulario */
 label {
   margin-bottom: 5px;
   font-weight: bold;
   color: #555;
 }
 
+/* Campos de entrada */
 input,
 select,
 textarea {
@@ -150,6 +141,7 @@ textarea {
   font-size: 16px;
 }
 
+/* Estilos de enfoque para campos de entrada */
 input:focus,
 select:focus,
 textarea:focus {
@@ -158,6 +150,7 @@ textarea:focus {
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
 }
 
+/* Botón de enviar */
 button {
   background-color: #007bff;
   color: white;
@@ -169,10 +162,29 @@ button {
   margin-top: 10px;
 }
 
+/* Estilos de desplazamiento vertical */
 button:hover {
   background-color: #0056b3;
 }
 
+/* Elemento oculto */
 .hidden {
   display: none;
+}
+
+/* Estilos adicionales para el formulario */
+.pizza-item {
+  margin-bottom: 10px;
+}
+
+/* Estilos para los checkboxes de toppings */
+.toppings-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.toppings-group label {
+  margin-right: 10px;
 }
